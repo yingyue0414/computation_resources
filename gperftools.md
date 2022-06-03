@@ -1,6 +1,6 @@
 ### gperftools
 
-06/03 by @think92 
+06/03 by @ [think92](https://github.com/think92) 
 
 - make sure you have gperftools and graphviz installed
 
