@@ -61,7 +61,7 @@ Example:
 env LD_PRELOAD=/usr/local/lib/libprofiler.so CPUPROFILE=test.prof ../bin/nerdss
 ```
 
-- Copy` hex.mol `and `parms_phex.inp` into `/nerdss_development/profiler/` and decrease iteration number (in `parms_phex.inp`) if a quick test run is needed.
+- Copy` hex.mol `and `parms_phex.inp` into `/nerdss_development/profiler/` and decrease iteration number (in `parms_phex.inp`) if a quick test run is needed. (The parameter files are available in [gperftools_example](https://github.com/yingyue0414/computation_resources/blob/main/gperftools_example/))
 - Run the simluation with the following command which profile the whole runtime
 ```
 LD_PRELOAD=/usr/local/lib/libprofiler.so CPUPROFILE=dt05.prof ../bin/nerdss -f parms_phex.inp > out.log
