@@ -97,7 +97,8 @@ pprof --pdf ../bin/nerdss dt05.prof > dt05.pdf
 > of cumulative (percentage)
 
 
-- The section between the following command are mapped.
+- Segment profiling: To profile specific section of source code wrap the section of interested
+wtih the following command. Note that profiler needs to be imported with `#include <gperftools/profiler.h>`
 ```
 ProfilerStart("outGaussV.prof")
 /****
