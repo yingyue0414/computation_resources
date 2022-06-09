@@ -11,7 +11,7 @@ ____________
 ```
 - Use `mkdir` function in the format of
 ```cpp
-mkdir(filename_string, access_code)
+mkdir(filename_string, access_code);
 // return true if directory is successfully created
 ```
 - Example in [NERDSS](https://github.com/mjohn218/nerdss_development/commit/f4bd6514437ac3311148f141435c6ffad541cb38#diff-a8351967ac28f8ef7bdd757e29b568681d26ce40ac94975755a58bdbb6e43600)
