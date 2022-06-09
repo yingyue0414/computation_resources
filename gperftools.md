@@ -24,31 +24,30 @@
 > Here is the model that we will profile, where the larger time-step iterations are faster than the smaller time-step. We will figure out the reason that slowing down one iteration using smaller time-step and look for some optimization room.
 > 
 > Kcachegrind (Ubuntu)
-> ```
+> ```shell
 > sudo apt install kcachegrind
 > sudo apt-get install graphviz gv
 > ```
 > qcacehgrind (Mac)
-> ```
+> ```shell
 > brew install graphviz
 > brew install qcachegrind
 > ```
 
 - In makefile, add -lprofiler  
- ```
+```
 LIBS = $(shell gsl-config --libs) -lprofiler
 ```
-Should be the same as  
-`g++ -lprofiler my_code.cpp`
+Should be the same as  `g++ -lprofiler my_code.cpp`
 
 - make file
-```
+```shell
 make clean
 make serial
 ```
 
 - create profiler directory
-```
+```shell
 mkdir profiler
 cd profiler
 ```
@@ -57,18 +56,18 @@ cd profiler
 
 - specify `LD_PRELOAD` with path to the `libprofiler.so` where you installed your gprofiler library if on linux and `CPUPROFILE` with an output file name. 
 Example:
-```
+```shell
 env LD_PRELOAD=/usr/local/lib/libprofiler.so CPUPROFILE=test.prof ../bin/nerdss
 ```
 
 - Copy` hex.mol `and `parms_phex.inp` into `/nerdss_development/profiler/` and decrease iteration number (in `parms_phex.inp`) if a quick test run is needed. (The parameter files are available in [gperftools_example](https://github.com/yingyue0414/computation_resources/blob/main/gperftools_example/))
 - Run the simluation with the following command which profile the whole runtime
-```
+```shell
 LD_PRELOAD=/usr/local/lib/libprofiler.so CPUPROFILE=dt05.prof ../bin/nerdss -f parms_phex.inp > out.log
 ```
 
 - Use `pprof` to view analysis of CPU profiling results with the following command (output `.pdf` map)
-```
+```shell
 pprof --pdf ../bin/nerdss dt05.prof > dt05.pdf
 ```
 - `(pprof) help` prints out all available commands in `pprof`
@@ -99,18 +98,23 @@ pprof --pdf ../bin/nerdss dt05.prof > dt05.pdf
 
 - Segment profiling: To profile specific section of source code wrap the section of interested
 wtih the following command. Note that profiler needs to be imported with `#include <gperftools/profiler.h>`
-```
+```cpp
+#include <gperftools/profiler.h>
+/***
+...
+***/
+
 ProfilerStart("outGaussV.prof")
-/****
-CODE
-****/
+/***
+CODE OF INTEREST
+***/
 ProfilerStop()
 ```
 - remove restarts and pdb folder when rerunning simulation
-```
+```shell
 rm -r PDB/ RESTARTS/
 ```
 - If environment is defined, no need for redefinition 
-```
+```shell
 ../bin/nerdss -f parms_phex.inp > out.og
 ```
