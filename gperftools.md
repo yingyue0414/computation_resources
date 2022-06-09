@@ -11,7 +11,7 @@
 > `brew install gperftools`
 > will install gperftools easily.
 > For the Ubuntu users, you can follow these commands to install the gperftools:
-> ```console
+> ```shell
 > sudo apt install libunwind8-dev libtool dh-autoreconf
 > git clone https://github.com/gperftools/gperftools.git
 > cd gperftools
