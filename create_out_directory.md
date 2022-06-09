@@ -1,4 +1,4 @@
-### Create out put directories
+### Create output directories
 
 05/27 by [@mjohn218](https://github.com/mjohn218)
 
