@@ -5,4 +5,5 @@ sudo apt install opam # or dnf, pacman, etc.
 opam init
 opam install depext
 opam depext frama-c
+sudo apt install frama-c-base
 ```
