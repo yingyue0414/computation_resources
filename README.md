@@ -10,7 +10,7 @@
 
 ## Python related
 
-[`convert_ipynb_to_py.sh`](https://github.com/yingyue0414/computation_resources/blob/main/convert_ipynb_to_py.sh) - convert all .ipynb file in the given directory to .py
+[`convert_ipynb_to_py.sh`](https://github.com/yingyue0414/computation_resources/blob/main/convert_ipynb_to_py.sh) - convert all .ipynb file in the given directory to .py; WARNING: the original .ipynb file will be deleted!
 
 ## Profiling and Performance
 
