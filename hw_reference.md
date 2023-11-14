@@ -16,10 +16,10 @@
 
 * You can use any language or extensions/packages, but inform Dr. Johnson if using **less popular ones**.
 * Submission must include a **compilable script**; submitting only a **PDF/doc/screenshot is not acceptable**.
-* **Compress files into one .zip file** (other formats accepted, but avoid using RAR).
+* **Compress files into one `.zip` file** (other formats accepted, but avoid using RAR).
 * **Personalize file names with your name or identifier** to avoid confusion.
 * **Include all necessary input files in the submission**.
-* Create a "**main**" file for easy compilation.
+* Create a `**main**` file for easy compilation.
 * **Restart the kernel and rerun the entire script before submission**.
 
 ## Types of Questions and Trial Run
@@ -35,7 +35,7 @@
 ### 3. "Create a Function/Program" Problems
 * **Write a function or program**.
 * In the "**main**" file, **import and refer to the function**.
-* Include **trial input values and results** (tables, graphs, .dat files) in the .zip.
+* Include **trial input values and results** (tables, graphs, `.dat` files) in the .zip.
 
 ## Structuring Code
 
