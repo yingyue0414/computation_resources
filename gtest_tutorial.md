@@ -62,7 +62,11 @@ Include `test_io.hpp` and write tests in `/tests/test_io.cpp` by implementing `T
 TEST(test_suite_name, test_name){
     // ... write your test here ..
 }
+```
 
+Use expect function (such as `EXPECT_EQ`) to confirm the result:
+
+```cpp
 // Example
 TEST(PopSpaceTest, BasicTest)
 {
@@ -71,7 +75,10 @@ TEST(PopSpaceTest, BasicTest)
     EXPECT_EQ(pop_space("\tTabs\tRemoved"), "TabsRemoved");
     EXPECT_EQ(pop_space("Mixed\t\tSpaces \tRemoved"), "MixedSpacesRemoved");
 }
+```
 
+Be careful for float and double - use `EXPECT_DOUBLE_EQ`:
+```cpp
 // Be careful for float and double - use EXPECT_DOUBLE_EQ
 TEST(ParameterTest, ImportParamFile)
 {
