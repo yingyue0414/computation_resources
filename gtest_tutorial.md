@@ -42,6 +42,45 @@ make
 sudo make install
 ```
 
+### Write Tests - Unit tests
+
+The standardized way to write unit test conforming to `CppCoreGuidelines` is to write a header and cpp test file for each header (or cpp). Suppose we want to write unit-test for our IO flow encoded in `/include/io.hpp` and `/src/io.cpp`. In this case, under `/tests/` folder, create `/tests/test_io.hpp` and `/tests/test_io.cpp` (name according to the convention for your repository). Link `gtest` and required headers in `/tests/test_io.hpp` - as an example:
+
+```hpp
+#pragma once
+
+#include <gtest/gtest.h>    ///<< include Google test
+#include <vector>           ///<< include modules you are using, such as std::vector in this case
+#include "io.hpp"           ///<< include headers you are testing and other required headers to run your tests here
+```
+
+Include `test_io.hpp` and write tests in `/tests/test_io.cpp` by implementing `TEST` from `gtest.h`:
+
+```cpp
+#include "test_io.hpp"
+
+TEST(test_suite_name, test_name){
+    // ... write your test here ..
+}
+
+// Example
+TEST(PopSpaceTest, BasicTest)
+{
+    EXPECT_EQ(pop_space("Hello World"), "HelloWorld");
+    EXPECT_EQ(pop_space("Spaces   Removed"), "SpacesRemoved");
+    EXPECT_EQ(pop_space("\tTabs\tRemoved"), "TabsRemoved");
+    EXPECT_EQ(pop_space("Mixed\t\tSpaces \tRemoved"), "MixedSpacesRemoved");
+}
+
+// Be careful for float and double - use EXPECT_DOUBLE_EQ
+TEST(ParameterTest, ImportParamFile)
+{
+    // ... import parameter file
+    EXPECT_DOUBLE_EQ(testParam.timeStep, 0.001);
+}
+```
+
+
 ### Modify Makefile
 
 Include testing targets in your Makefile to make both main executable and test executable:
