@@ -1,4 +1,6 @@
-# Testing in Software Development
+# Testing wtih Google Test `gtest`
+
+## Significance of testing
 
 Testing is an essential aspect of software development that ensures the reliability, functionality, and performance of code. It helps identify bugs, verify that code meets requirements, and provides confidence in the software's correctness.
 
